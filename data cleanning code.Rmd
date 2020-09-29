@@ -1,0 +1,50 @@
+---
+title: "covid data cleanning"
+author: "slzhou"
+date: "2020/9/19"
+output: html_document
+---
+0.读入数据和预处理
+```{r}
+#ibrary(Hmisc)
+library(haven)
+#library(RODBC)
+library(foreign)
+library(dplyr)
+d <- read_spss("C:/Users/MI/Desktop/covid-19/19-20合并库【定】.sav")
+data <- read.epiinfo('C:/Users/MI/Desktop/covid-19/1-浙江省2016-19年数据/全国项目16-18/浙江省学生常见病监测数据（最终库）/（浙江省） 表3-1+表4 学生健康状况及影响因素调查表&视力不良.rec')
+head(data)
+colnames(data)
+data$ID1[1]
+#data<-data[,order(colnames(data),decreasing=FALSE)]
+```
+
+
+
+1.列名转化
+1.1 A03缺失，估计是录入数据是将A03写成了A04
+1.2 将某些分类变量处理为rank variable
+```{r}
+data <- rename_at(data,'A01',~'grade')
+data <- rename_at(data,'A02',~'gender')
+data <- rename_at(data,'A04',~'resident')
+data <- rename_at(data,'A05',~'Nationality')
+data <- rename_at(data,'A06',~'family_num')
+data <- rename_at(data,'A07',~'toothbrush_habit') #需要后续处理为哑变量
+data <- rename_at(data,'A08',~'sick_leave')
+data <- rename_at(data,'A09',~'sick_drop')
+
+
+data <- rename_at(data,'B01',~'sugary_drink')
+data <- rename_at(data,'B02',~'sweets')
+data <- rename_at(data,'B03',~'fried_food')
+data <- rename_at(data,'B04',~'fresh_fruit')
+data <- rename_at(data,'B05',~'vegetable')
+data <- rename_at(data,'B06',~'breakfast')
+data <- rename_at(data,'B09A',~'exercise')
+data <- rename_at(data,'B012',~'P.E.')
+
+
+
+```
+
