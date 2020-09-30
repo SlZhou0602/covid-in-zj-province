@@ -29,21 +29,49 @@ data <- rename_at(data,'A01',~'grade')
 data <- rename_at(data,'A02',~'gender')
 data <- rename_at(data,'A04',~'resident')
 data <- rename_at(data,'A05',~'Nationality')
-data <- rename_at(data,'A06',~'family_num')
-data <- rename_at(data,'A07',~'toothbrush_habit') #需要后续处理为哑变量
-data <- rename_at(data,'A08',~'sick_leave')
-data <- rename_at(data,'A09',~'sick_drop')
+data <- rename_at(data,'A06',~'family member')
+data <- rename_at(data,'A07',~'toothbrush habit') #需要后续处理为哑变量
+data <- rename_at(data,'A08',~'sick leave')
+data <- rename_at(data,'A09',~'sick drop')
 
-
-data <- rename_at(data,'B01',~'sugary_drink')
+#rank variable
+data <- rename_at(data,'B01',~'sugary drink')
 data <- rename_at(data,'B02',~'sweets')
-data <- rename_at(data,'B03',~'fried_food')
-data <- rename_at(data,'B04',~'fresh_fruit')
+data <- rename_at(data,'B03',~'fried food')
+data <- rename_at(data,'B04',~'fresh fruit')
 data <- rename_at(data,'B05',~'vegetable')
 data <- rename_at(data,'B06',~'breakfast')
 data <- rename_at(data,'B09A',~'exercise')
-data <- rename_at(data,'B012',~'P.E.')
+data <- rename_at(data,'B12',~'P.E.')
 
+
+data <- rename_at(data,'E01',~'serious injury')
+data <- rename_at(data,'E011',~'serious injury times')
+#rank variable
+data <- rename_at(data,'E031',~'teasing')
+data <- rename_at(data,'E032',~'property asking')###
+data <- rename_at(data,'E033',~'isolated')###
+data <- rename_at(data,'E034',~'threatened')
+data <- rename_at(data,'E035',~'abusement')
+data <- rename_at(data,'E036',~'teasing for Physical defect or appearance')
+data <- rename_at(data,'E04',~'times of fight 12 months before')###
+data <- rename_at(data,'E05',~'no crosswalk 30 days before')
+data <- rename_at(data,'E06',~'unsafe swimming 12 months before')
+data <- rename_at(data,'E061',~'times of unsafe swimming 12 months before')
+data <- rename_at(data,'E13',~'domestic violence 12 months before')
+data <- rename_at(data,'E0131',~'times of domestic violence 12 months before')
+
+
+data <- rename_at(data,'F01',~'smoking')
+data <- rename_at(data,'F011',~'age of first smoking')
+data <- rename_at(data,'F03',~'somking 30 days before')
+data <- rename_at(data,'F031',~'days of smoking 30 days before')
+data <- rename_at(data,'F051A',~'no secondhand smoking 7 days before')
+data <- rename_at(data,'F052A',~'secondhand somking at  home')
+data <- rename_at(data,'F053A',~'secondhand somking in school')
+data <- rename_at(data,'F054A',~'secondhand somking in other public place')
+data <- rename_at(data,'F07',~'drinking')
+data <- rename_at(data,'F071',~'Age of first drinking')
 
 
 ```
