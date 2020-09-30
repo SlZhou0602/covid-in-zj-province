@@ -25,12 +25,13 @@ data$ID1[1]
 1.1 A03缺失，估计是录入数据是将A03写成了A04
 1.2 将某些分类变量处理为rank variable
 ```{r}
+#table 3-1
 data <- rename_at(data,'A01',~'grade')
 data <- rename_at(data,'A02',~'gender')
 data <- rename_at(data,'A04',~'resident')
 data <- rename_at(data,'A05',~'Nationality')
 data <- rename_at(data,'A06',~'family member')
-data <- rename_at(data,'A07',~'toothbrush habit') #需要后续处理为哑变量
+data <- rename_at(data,'A07',~'brushing habit') #需要后续处理为哑变量
 data <- rename_at(data,'A08',~'sick leave')
 data <- rename_at(data,'A09',~'sick drop')
 
@@ -54,24 +55,77 @@ data <- rename_at(data,'E033',~'isolated')###
 data <- rename_at(data,'E034',~'threatened')
 data <- rename_at(data,'E035',~'abusement')
 data <- rename_at(data,'E036',~'teasing for Physical defect or appearance')
-data <- rename_at(data,'E04',~'times of fight 12 months before')###
-data <- rename_at(data,'E05',~'no crosswalk 30 days before')
-data <- rename_at(data,'E06',~'unsafe swimming 12 months before')
-data <- rename_at(data,'E061',~'times of unsafe swimming 12 months before')
-data <- rename_at(data,'E13',~'domestic violence 12 months before')
-data <- rename_at(data,'E0131',~'times of domestic violence 12 months before')
+data <- rename_at(data,'E04',~'times of fight last 12 months')###
+data <- rename_at(data,'E05',~'no crosswalk last 30 days')
+data <- rename_at(data,'E06',~'unsafe swimming last 12 months')
+data <- rename_at(data,'E061',~'times of unsafe swimming last 12 months')
+data <- rename_at(data,'E13',~'domestic violence last 12 months')
+data <- rename_at(data,'E0131',~'times of domestic violence last 12 months')
 
 
 data <- rename_at(data,'F01',~'smoking')
 data <- rename_at(data,'F011',~'age of first smoking')
-data <- rename_at(data,'F03',~'somking 30 days before')
-data <- rename_at(data,'F031',~'days of smoking 30 days before')
-data <- rename_at(data,'F051A',~'no secondhand smoking 7 days before')
+data <- rename_at(data,'F03',~'somking last 30 days')
+data <- rename_at(data,'F031',~'days of smoking last 30 days')
+data <- rename_at(data,'F051A',~'no secondhand smoking last 7 days')
 data <- rename_at(data,'F052A',~'secondhand somking at  home')
 data <- rename_at(data,'F053A',~'secondhand somking in school')
 data <- rename_at(data,'F054A',~'secondhand somking in other public place')
 data <- rename_at(data,'F07',~'drinking')
 data <- rename_at(data,'F071',~'Age of first drinking')
+
+
+data <- rename_at(data,'K01',~'earphone')
+data <- rename_at(data,'K011',~'age of first use of earphone')
+data <- rename_at(data,'K02',~'time of use earphone per day last 7 days')
+data <- rename_at(data,'K03',~'times of continuous ues earphone more than 1 hour last 7 days')
+#rank variable
+data <- rename_at(data,'K04',~'times of continuous ues earphone more than 30 minutes in a noisy environment last 7 days')###
+data <- rename_at(data,'K05',~'hearing loss in the last month')
+```
+
+
+```{r}
+#table 4
+data <- rename_at(data,'H401B',~'seat change regularly')
+data <- rename_at(data,'H401C',~'seat height adjustment')
+data <- rename_at(data,'H401D',~'times of eye exercises per day')
+data <- rename_at(data,'H01B',~'Activity place for class break')
+
+
+data <- rename_at(data,'H02A',~'Homework/reading time after school last week')
+data <- rename_at(data,'H402B',~'Time to participate in cultural cram school last week')
+data <- rename_at(data,'H402C',~'age of first participating in cultural cram school')
+data <- rename_at(data,'H402D1',~'Musical instrument cram school')
+data <- rename_at(data,'H402D2',~'cultural cram school')
+data <- rename_at(data,'H402D3',~'sports and art cram school')
+data <- rename_at(data,'H402D4',~'chess cram school')
+data <- rename_at(data,'C09',~'sports time decreasing for study')
+data <- rename_at(data,'C10',~'TV and computer game time limit')
+
+
+#data <- rename_at(data,'H403A',~'')
+#data <- rename_at(data,'H403B',~'')
+#data <- rename_at(data,'H403C',~'')
+#data <- rename_at(data,'H403D',~'')
+#data <- rename_at(data,'H403E',~'')
+
+
+data <- rename_at(data,'H04A',~'TV time per day last week')
+data <- rename_at(data,'H04B',~'computer time per day last week')
+data <- rename_at(data,'H04C',~'Mobile electronic device time per day last week')
+
+
+# RANK VARIABLE
+data <- rename_at(data,'H03A',~'Reading or electronic screen using in the sun')
+data <- rename_at(data,'H03B',~'Turning off the light when using the electronic screen after dark')
+data <- rename_at(data,'H03C',~'using the electronic screen when you lie down')
+data <- rename_at(data,'H03D',~'using the electronic screen when you walk or driving')###
+data <- rename_at(data,'H03F',~'The distance from the eyes to the computer screen is more than 66cm')
+data <- rename_at(data,'H03G',~'The distance from the eyes to the TV screen is more than 3m')
+data <- rename_at(data,'C03',~'the type of your light after dark')
+data <- rename_at(data,'H03H',~'the time interval of eyes resting')
+
 
 
 ```
