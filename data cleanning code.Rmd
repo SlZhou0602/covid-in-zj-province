@@ -127,6 +127,31 @@ data <- rename_at(data,'C03',~'the type of your light after dark')
 data <- rename_at(data,'H03H',~'the time interval of eyes resting')
 
 
+data <- rename_at(data,'H05A',~'daily outdoor activity time last week')
+data <- rename_at(data,'D031',~'daily sleep duration')
 
+data <- rename_at(data,'H06A',~'parents vision')
+data <- rename_at(data,'H06B',~'times of vision check last year')
+data <- rename_at(data,'H06C',~'uncorrected visual acuity (< 5.0)')
+
+data <- rename_at(data,'H06D1',~'Myopia')
+data <- rename_at(data,'H06D2',~'Hyperopia')
+data <- rename_at(data,'H06D3',~'Strabismus')
+data <- rename_at(data,'H06D4',~'Amblyopia')
+data <- rename_at(data,'H06D5',~'other vision problems')
+data <- rename_at(data,'H06D6',~'No medical examination')
+
+data <- rename_at(data,'H06E1',~'Eye surgery')
+data <- rename_at(data,'H06E2',~'drug treatment')
+data <- rename_at(data,'H06E3',~'orthokeratology')
+data <- rename_at(data,'H06E4',~'frame glasses')
+data <- rename_at(data,'H06E7',~'contact glasses')
+data <- rename_at(data,'H06E5',~'other treatments')
+data <- rename_at(data,'H06E6',~'no medical treatments')
+
+data <- rename_at(data,'H06F',~'glasses')
+data <- rename_at(data,'H06F1',~'always')
+data <- rename_at(data,'H06F2',~'sometimes')
+data <- rename_at(data,'H06G',~'medical examination types before glasses-wearing')
 ```
 
